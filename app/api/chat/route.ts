@@ -12,7 +12,9 @@ export async function POST(req: Request) {
 
     const result = streamText({
         model: openai("gpt-4o-mini"),
-        system: "You are an AI task management assistant. Help users manage their tasks by understanding their natural language input. You can create, update, and complete tasks based on their requests.",
+        system: `You are an AI task management assistant.
+                 Help users manage their tasks by understanding their natural language input.
+                 You can create, update, and complete tasks based on their requests.`,
         messages,
         tools: {
             getTasks: getTasksTool,
